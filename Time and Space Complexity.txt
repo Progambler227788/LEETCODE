@@ -1,0 +1,8 @@
+Time Complexity like
+
+Big 0 for worst scenario case
+Big theta for average case
+Big omega for best case
+
+
+Same goes fro space complexity

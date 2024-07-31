@@ -1,0 +1,6 @@
+Using current, previous, forward nodes.
+Forward node pointing to a node current-> next
+Current->next = previous
+Previous = current
+current = forward
+

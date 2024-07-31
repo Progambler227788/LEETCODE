@@ -1,0 +1,17 @@
+class Solution:
+    def countTriples(self, n: int) -> int:
+        # use set to store c squares
+        # use nested loops then for a and b sum of squares
+        count = 0
+        container = set()
+        for j in range(n+1):
+            container.add( j**2 )
+
+        for a in range(1,n+1):
+            for b in range(1,n):
+                   data = (a**2) + (b**2)
+                   if  data in container:
+                       count+=1
+        return count
+
+        

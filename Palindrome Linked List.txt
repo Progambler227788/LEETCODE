@@ -1,0 +1,6 @@
+In palindrome linked list, first find mid then use
+that mid to reverse half list. After that, take unreversed 
+list head to move one position and similary reversed list
+slow pointer, condition will be true if slow is not null
+and head and slow values are equal
+check slow is equal to null at end statement

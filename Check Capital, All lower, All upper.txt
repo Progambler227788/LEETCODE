@@ -1,0 +1,14 @@
+class Solution:
+    def to_uppercase(self,char):
+      return 'A' <= char <= 'Z'
+
+    def detectCapitalUse(self, word: str) -> bool:
+        check = True
+        count = 0
+        for i in word:
+            if self.to_uppercase(i)==False:
+                check = False
+                count+=1
+            
+        return count==len(word) or (count==len(word)-1 and self.to_uppercase( word[0]) ) or check 
+        

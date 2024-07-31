@@ -1,0 +1,10 @@
+Using slow and Fast Pointers
+ 1   2  3  4
+ At step 1, slow and fast will be at 1
+ At step 2 , slow will be at 2 and fast at 3
+ At step 3, fast will be at null and slow at 3
+ Middle will be 3.
+
+So, we got for even linked list nodes we will have our
+fast pointer at null and for odd our fast will be at 
+last node before null

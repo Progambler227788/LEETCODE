@@ -1,0 +1,48 @@
+class Solution:
+    def giveString(self,a,b,tit) -> str:
+        string = ""
+        for i in range(a,b+1):
+            string += tit[i]
+        return string
+
+    def to_uppercase(self,char):
+    # Check if the character is a lowercase letter
+      if 'a' <= char <= 'z':
+        # Convert to uppercase by subtracting 32 from its ASCII value
+        return chr(ord(char) - 32)
+    # If it's not a lowercase letter, return the character as is
+      return char
+
+    def to_lowercase(self,char):
+    # Check if the character is a uppercase letter
+       if 'A' <= char <= 'Z':
+        
+        return chr(ord(char) + 32)
+
+       return char
+
+    def checkLength(self,tit:str) -> str:
+        string =""
+        if len(tit) in (1,2):
+            string = tit.lower()
+        else:
+            string += self.to_uppercase(tit[0])
+            for i in range(1,len(tit)):
+                string += self.to_lowercase(tit[i])
+        return string
+
+    def capitalizeTitle(self, title: str) -> str:
+        strings = ""
+
+        m = 0
+        
+        for i in range(0,len(title)):
+            if title[i]==' ':   
+                res = self.giveString(m,i-1,title)
+                print(res)
+                strings+= self.checkLength(res) + " "
+                m = i+1
+        res = self.giveString(m, len(title) - 1 ,title)
+        print(res)
+        strings+= self.checkLength(res)    
+        return strings

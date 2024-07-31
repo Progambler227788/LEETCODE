@@ -1,0 +1,60 @@
+Power is like multiplying x with n times. (brute force)
+
+using bits
+
+So let say I've to take 7 power of 11
+
+7 is 111 and 11 has 1011 binaries.
+
+Now what, we will we will take it as
+8+2+1 equal to 11 as 0 bit will be ignored.
+
+if (n < 0 )
+     x = 1/x
+
+while(n) {
+
+       if( n and 1 == 1)
+               pow*=x
+            x*=x
+            n = n /2
+}
+
+Right shifting one bit
+
+Removing last bit and adding zero at start.
+It means dividing it by 2 actually
+11 is 1011, 5 is  0101
+5 is 101 and 2 is 010
+2 is 010 and 001 is 1.
+
+x=3 n=2, 3**2 == 9
+
+so what I will do.
+
+3 & 1 that is true as and masking with 1 would be 1. 011 and 001, would be 001
+pow will be multiplied by x that is 3. So, pow is now 3
+and then x will be 9. n will be 1.
+
+Only x will be 9 then pow will be 9 after 2nd time, as first time n is 2 that is even not odd, second time n will be 1 so it will give us power of 9.
+
+
+Now this function uses recurssion, as it will multiply x with function result if n is odd otherwise as it is.
+fun myPow(x: Double, n: Int): Double {
+        return binaryExp(x, n.toLong())
+    }
+    fun binaryExp(x: Double, n: Long): Double {
+        if (n == 0L) {
+            return 1.0
+        }
+        if (n < 0) {
+            return 1.0 / binaryExp(x, -1 * n)
+        }
+        return if (n % 2 == 1L) {
+            x * binaryExp(x * x, (n) / 2)
+        } else {
+            binaryExp(x * x, n / 2)
+        }
+    }
+
+

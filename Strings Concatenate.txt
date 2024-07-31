@@ -1,0 +1,26 @@
+1768 Leetcode
+
+class Solution:
+    def mergeAlternately(self, word1: str, word2: str) -> str:
+
+        # concatenate in case same length
+    
+        data = ""
+        n = len(word1)
+        n2 = len(word2)
+
+        count = n2
+        if n > n2:
+            count = n
+        
+        for i in range( count ):
+            if i < n and i < n2:
+               data += word1[i] + word2[i]
+            elif i < n and i >= n2:
+                data += word1[i]
+            elif i < n2 and i >=n :
+                data += word2[i]
+
+            
+        return data
+        

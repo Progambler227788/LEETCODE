@@ -1,0 +1,26 @@
+For problem checking distances between same letters,
+
+we can use map to fetch indices and if again same 
+letter come again then using ascii we will fetch
+distances from array and then we will compare it.
+
+
+class Solution:
+ def checkDistances(self, s: str, distance: List[int]) -> bool:
+
+    data = {}
+
+    for i in range( len(s)):
+        if  s[i]  not in data:
+            data[ s[i] ] = [i]
+        else:
+            get_dis_index = ord(s[i]) - 97
+            dis = distance[ get_dis_index ]
+            if (dis + 1) != (abs( data [s[i]] [0] - i  )) :
+                return False
+    return True
+
+
+
+            
+        

@@ -1,0 +1,15 @@
+Maximum Triplet Value
+
+class Solution:
+    def maximumTripletValue(self, nums: List[int]) -> int:
+        count = 0
+        # i < j < k
+        for j in range(1, len(nums) -1 ): # skip last element
+
+            for i in range ( 0, j):
+
+                for k in range (j+1, len(nums)):
+                  current = (nums[i] - nums[j]) * nums[k]
+                  if  current > count:
+                    count  = current
+        return max(count,0)

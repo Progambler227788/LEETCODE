@@ -1,0 +1,2 @@
+Move backward or forward from specific character 
+for distance calculation

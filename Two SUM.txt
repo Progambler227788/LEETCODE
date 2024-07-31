@@ -1,0 +1,19 @@
+
+
+2,7,11,15 ,, t= 9
+
+9 - 2 = 7 , 7 is not in map
+
+updated map:
+2 - > 0
+
+7,11,15 , t = 9
+
+9 - 7 = 2, 2 is in map
+
+get index of 2 (value) of 2, that is 0
+and return them.
+
+if complement in map:
+ return [map[complement],i]
+ map[nums[i]] = i

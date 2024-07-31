@@ -1,0 +1,12 @@
+So, in sorted array removing duplicates you just need to skip
+elements next to first occurence
+
+First approach using single pointer
+
+p keep on increasing 
+like 1,1,1,2,2,2
+skip twos ones after 1 and twos 2 after 2
+just keep one occurence
+
+
+Second approach is using map

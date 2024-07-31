@@ -1,0 +1,13 @@
+For distances,
+we can store indices of specific characters first.
+
+Then, what we can do is just use some pointer like
+j that will give us closest indices.
+
+like say my index of character is 3
+and my array have 1,4..
+so you can see next character is closer to me so 
+that's why i'm gonna update j
+because we are moving forward and we can 100% say
+that next characters after 3 will be more closer to 4
+because 3 is far away from 1 so that is a clue here

@@ -1,0 +1,9 @@
+So, logic for loops
+is
+a < b < c < d
+
+a+b = c-d
+
+using map for storing sum
+
+using count for storing count of sum

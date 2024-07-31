@@ -1,0 +1,5 @@
+Notes:
+Check either you are comparing indexes
+Either Values
+Check datatype
+Check variable names

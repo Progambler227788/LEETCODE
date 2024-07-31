@@ -1,0 +1,72 @@
+3SUM approach
+Using a map,
+
+target will be - (current + nums[j])
+because like 1,0,-1 we have
+then -1 is ans for -(1+0) then it will
+add map [0] = 1
+
+again when it comes,
+ans is -(1-1) is 0 so
+0 is already here in map. Now, 1 + 0 - 1
+
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        maping = {}
+        nums = sorted(nums)
+        data = set()
+        for i in range( len(nums) ):
+            for j in range ( i+1, len(nums) ):
+                target = - (nums[i] + nums[j])
+
+                if target in maping and i!=j and i!= maping[target] and j!= maping[target]:     
+                    trip =  [ nums[i] , target , nums[j] ] 
+                    trip = tuple(sorted([nums[i], target, nums[j]]))  
+                    if nums[i] + target + nums[j] == 0:
+                       data.add( trip  )
+                maping [ nums[j]  ] = j # key -> array value, value -> array index
+        return [list(trip) for trip in data]
+                    
+        
+
+
+Second Approach,
+
+
+Two pointers,
+
+take first element fixed
+move left and right accordingly
+
+
+
+
+def threeSum(self, nums: List[int]) -> List[List[int]]:
+        nums.sort()
+        print(nums)
+        data = []
+        # to ensure that two elements left after first one
+        for i in range( len(nums) - 2 ):
+            left = i + 1
+            right = len(nums) - 1
+            if i>0 and nums[i] == nums[i-1]:
+                continue
+            while left < right:
+                target = nums[i] + nums[left] + nums[right]
+            
+                if target>0:
+                    right -= 1
+                    
+                elif target < 0 :
+                    left += 1
+                    
+                else:
+                    data.append(  [ nums[i],nums[left],nums[right] ]  )
+                    left+=1
+                    while ( nums[left] == nums[left-1]  and left<right):
+                        left +=1
+                    
+        return data
+            
+
+
