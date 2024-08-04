@@ -1,0 +1,29 @@
+Squares of a sorted array:
+Like you say,
+-1,0,1,2,3
+square will be positive
+maximum square will be at last so start from last
+
+-4,-1,0,3,10
+
+compare abs(-4) and abs(10)
+
+SQUARES:
+so store 100 at last of new array. right -=1
+
+now,
+-4 with 3.
+
+now store 16 at second last of array. left+=1
+
+now, -1 with 3. 
+
+now store 9 at third last of array. right-=1
+
+now, -1 with 0
+now store 1 at fourth last of array. left +=1
+
+now, 0 with 0, 
+so 0 at first index of new array.
+
+abs(left) and abs(right)

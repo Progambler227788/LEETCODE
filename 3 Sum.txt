@@ -10,6 +10,13 @@ again when it comes,
 ans is -(1-1) is 0 so
 0 is already here in map. Now, 1 + 0 - 1
 
+# 3 2 -3 0 1
+# -3 0 1 2 3
+
+map = {0:0}
+
+
+
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         maping = {}
@@ -67,6 +74,33 @@ def threeSum(self, nums: List[int]) -> List[List[int]]:
                         left +=1
                     
         return data
+
+# 3 2 -3 0 1
+# -3 0 1 2 3
+
+# we have to skip duplicate for one pointer either left or right so that one of them remains unique otherwise it will cause problems as duplicates will be in it
+Iteration 0:
+-3.. is i
+left = 0
+right = 3
+
+-3+0+3
+data.append(their indices)
+
+Now same i = -3,
+left = 1
+right = 3
+
+result is 1 -> -3+1+3
+
+so target > 0, decrement right pointer
+Now same i = -3,
+left = 1
+right = 2
+
+
+
+
             
 
 

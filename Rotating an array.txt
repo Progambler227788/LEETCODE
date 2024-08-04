@@ -1,0 +1,26 @@
+For rotating array,
+
+first approach is to reverse whole array,
+reverse first k elements, reverse remaining
+k elements
+
+class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
+        def reverse(nums, start, end):
+         while start < end:
+            nums[start], nums[end] = nums[end], nums[start]
+            start += 1
+            end -= 1
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        k = k % len(nums)  # It makes k = 1 for k = 3 and len(nums) = 2
+        if len(nums) == 1:
+            return None
+        b = len(nums) -1
+        reverse(nums, 0,  b)
+        reverse ( nums, 0,k-1   ) # first k elements
+        reverse(  nums, k, b  )
+        
+
+        
